@@ -1,0 +1,89 @@
+## Installation and Setup
+
+Follow these steps to run the SkillSwap project on your local computer.
+
+### Prerequisites
+
+Before starting, make sure you have installed:
+
+- **XAMPP** — to run Apache and MySQL.
+- **Web Browser** — Google Chrome or any modern browser.
+- **Git** (optional) — to clone the project from GitHub.
+
+### Step 1: Download the Project
+
+1. Open the SkillSwap GitHub repository.
+2. Click the **Code** button.
+3. Select **Download ZIP**.
+4. Extract the downloaded ZIP file.
+
+### Step 2: Move the Project Folder
+
+1. Open the XAMPP installation directory.
+2. Navigate to the `htdocs` folder.
+3. Copy the extracted project folder into `htdocs`.
+4. Rename the folder to `skillswap` if necessary.
+
+The project path should be:
+
+`C:\xampp\htdocs\skillswap`
+
+### Step 3: Start XAMPP
+
+1. Open the XAMPP Control Panel.
+2. Click **Start** next to Apache.
+3. Click **Start** next to MySQL.
+
+Make sure both services are running.
+
+### Step 4: Create the Database
+
+1. Open your browser and visit `http://localhost/phpmyadmin/`.
+2. Click **New** to create a database.
+3. Enter `skillswap` as the database name.
+4. Click **Create**.
+
+### Step 5: Import the Database
+
+1. Select the `skillswap` database in phpMyAdmin.
+2. Open the **Import** tab.
+3. Click **Choose File** and select the project's `skillswap.sql` file.
+4. Click **Import** or **Go** to import the database.
+
+**Note:** The `skillswap.sql` file must be included in the GitHub repository. If the database backup has a different filename, select that file instead.
+
+### Step 6: Configure the Database Connection
+
+1. Open the project folder.
+2. Find the `db.php` file.
+3. Configure the database connection settings for your local XAMPP environment.
+
+Example configuration:
+
+```php
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "skillswap";
+```
+
+Use these settings only if they match your local MySQL configuration. Keep database credentials private.
+
+### Step 7: Run the Project
+
+Open your web browser and visit:
+
+`http://localhost/skillswap/`
+
+The SkillSwap application should now open on your local computer.
+
+### Troubleshooting
+
+- **Apache or MySQL does not start:** Check whether another application is using the required port.
+- **Database connection error:** Verify the settings in `db.php`.
+- **Table does not exist:** Make sure the correct SQL file was imported into the `skillswap` database.
+- **Page not found:** Confirm that the project folder is inside `C:\xampp\htdocs\skillswap`.
+
+### Important Note
+
+The live website and the local version may use different database connection settings. Configure `db.php` according to the environment in which the project is running.
